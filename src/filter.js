@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-react-dom';
+import ReactDOM from 'react-dom';
 
 export default function Filter() {
   return(

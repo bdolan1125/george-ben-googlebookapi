@@ -7,4 +7,4 @@ export default function Header(){
       Google Book Search
     </header>
   )
-};
+}; 
