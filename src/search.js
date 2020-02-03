@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Search extends React.Component {
+  state = {
+    repos:[]
+  };
   constructor(props) {
     super(props);
+    
 
   this.handleSubmit = this.handleSubmit.bind(this);
   }
      handleSubmit = e => {
     let searchVal = this.refs.title.value;
-    console.log(searchVal);
+    let fetchTitle = () => {
+      fetch('https://www.googleapis.com/books/v1/volumes?q=' + searchVal)
+        .then(res => res.json())
+        .then(repos => this.setState({repos}))
+    }
+    console.log(this.state.repos);
     }
     render(){
   return(
