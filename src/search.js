@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Search extends Component() {
-  constructor(props){
+class Search extends React.Component {
+  constructor(props) {
     super(props);
-    let handleSubmit = e => {
+
+  this.handleSubmit = this.handleSubmit.bind(this);
+  }
+     handleSubmit = e => {
     let searchVal = this.refs.title.value;
-    this.handleSubmit = this.handleSubmit.bind(this);
     console.log(searchVal);
-      
     }
-  
-  
+    render(){
   return(
     <section className='search-bar'>
       <p>Search:</p>
-      <form ref='title' type='text' className='search-box'></form>
-      <button onClick={handleSubmit} type='submit' className='search-but'>Search</button>
+      <input ref='title' type='text' className='search-box'></input>
+      <button onClick={this.handleSubmit} type='submit' className='search-but'>Search</button>
     </section>
   )
 }}
+
+
+export default Search;
